@@ -110,7 +110,9 @@ public class LoginService : ILoginService
             Fullname = request.Name!,
             Email = request.Email,
             Passwordhash = hashedPassword,
-            Role = "User"
+            Role = "User",
+            Isactive= false,
+            Createdat = DateTime.UtcNow
         };
 
         return await _Loginrepository.RegisterUserAsync(newUser);

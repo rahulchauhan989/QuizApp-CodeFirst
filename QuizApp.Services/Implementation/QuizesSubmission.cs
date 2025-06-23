@@ -110,7 +110,7 @@ public class QuizesSubmission : IQuizesSubmission
                 score += correctAnswers
                      .FirstOrDefault(c => c.QuestionId == answer.QuestionId)?.Marks ?? 0;
             }
-            else
+            else 
             {
                 score -= correctAnswers
                     .FirstOrDefault(c => c.QuestionId == answer.QuestionId)?.Marks ?? 0;

@@ -226,7 +226,8 @@ public class QuizRepository : IQuizRepository
         var quizQuestion = new Quizquestion
         {
             QuizId = quiz.Id,
-            QuestionId = question.QuestionId
+            QuestionId = question.QuestionId,
+            
         };
 
         await _context.Database.ExecuteSqlRawAsync(

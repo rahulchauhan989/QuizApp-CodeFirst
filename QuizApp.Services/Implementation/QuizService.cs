@@ -395,7 +395,8 @@ public class QuizService : IQuizService
             Ispublic = false,
             Isdeleted = false,
             CategoryId = dto.Categoryid,
-            Createdby = userId
+            Createdby = userId,
+            Createdat = DateTime.UtcNow
         };
 
         await _quizRepository.CreateQuizAsync(quiz);
@@ -459,8 +460,9 @@ public class QuizService : IQuizService
             Marks = dto.Marks!.Value,
             Difficulty = dto.Difficulty,
             CategoryId = quiz.CategoryId,
-            Updatedat = DateTime.UtcNow.ToLocalTime(),
-            Updatedby = userId,
+            Updatedat = DateTime.UtcNow,
+            Createdby = 1,
+            // Updatedby = userId,
             Options = dto.Options?.Select(o => new Option
             {
                 Text = o.Text!,

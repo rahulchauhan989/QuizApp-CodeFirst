@@ -161,6 +161,7 @@ public class QuestionServices : IQuestionServices
             Difficulty = dto.Difficulty,
             Createdby = userId,
             Isdeleted = false,
+            Createdat = DateTime.UtcNow,
             Options = dto.Options!.Select(o => new Option
             {
                 Text = o.Text!,
